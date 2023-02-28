@@ -20,8 +20,20 @@ def match(match_id):
 
 
 def is_match(fave_numbers_1, fave_numbers_2):
-    for number in fave_numbers_2:
-        if number not in fave_numbers_1:
+
+    num_1_set = set(fave_numbers_1)
+    num_2_set = set(fave_numbers_2)
+    
+    if num_1_set.issuperset(num_2_set):
+        return True
+    return False
+
+    # We can also do that by doing this
+
+    '''
+    for number in num_2_set:
+        if number not in num_1_set:
             return False
 
     return True
+    '''
